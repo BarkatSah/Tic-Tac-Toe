@@ -9,6 +9,8 @@ bool checkTie(char *spaces);
 
 int main(){
 
+    srand(time(0));
+
     char player = 'X';
     char computer = 'O';
     char spaces[9] = {' ', ' ', ' ', ' ', ' ', ' ', ' ', ' ', ' '};
@@ -74,7 +76,6 @@ void playerChance(char *spaces, char player){
 }
 
 void computerChance(char *spaces, char computer){
-    srand(time(0));
     int number;
 
     while(true){
@@ -122,7 +123,7 @@ int checkWinner(char *spaces, char player, char computer){
     }
 
 
-    if(spaces[0] != ' ' && spaces[0] == computer && spaces[1] == player && spaces[2] == player){
+    if(spaces[0] != ' ' && spaces[0] == computer && spaces[1] == computer && spaces[2] == computer){
         std::cout << "You Lose!\n";
         return 0;
     }
